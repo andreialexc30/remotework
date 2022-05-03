@@ -26,6 +26,16 @@ dropdowns.forEach((btn) => {
     })
 })
 
+// Close dropdown upon clicking outside
+window.onclick = function(e) {
+    console.log(e.target)
+    if(!e.target.matches('.dropdown-trigger') && !e.target.parentElement.matches('.dropdown_list') && !e.target.matches('.dropdown_list')) {
+        dropdownsList.forEach((dropdown) => {
+            dropdown.classList.remove('active')
+        })
+    }
+}
+
 function expandMenu(status) {
     if(menuList.classList.contains(status)) {
         menuList.classList.remove(status)
